@@ -1,11 +1,11 @@
-version: '3'
+version: "3"
 services:
   web:
     build:
       context: .
       dockerfile: web.Dockerfile
     image: nginx:latest
-    container_name: followup_service_nginx
+    container_name: followup_service_nginx_Raghav
     ports:
       - "9000:80"
     volumes:
@@ -15,13 +15,13 @@ services:
       - followup_service_network
   php:
     container_name: followup_service
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./:/var/www/html  
+      - ./:/var/www/html
     networks:
-      - followup_service_network  
+      - followup_service_network
     command: sh -c "php-fpm"
 
 networks:
