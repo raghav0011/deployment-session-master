@@ -5,23 +5,23 @@ services:
       context: .
       dockerfile: web.Dockerfile
     image: nginx:latest
-    container_name: followup_service_nginx_Raghav
+    container_name: followup_service_nginx_Raghav2.0
     ports:
       - "5000:80"
     volumes:
       - ./:/var/www/html/
       - ./storage/app:/var/www/html/storage/app
     networks:
-      - followup_service_network
+      - followup_service_network4
   php:
-    container_name: followup_service
+    container_name: followup_service_Raghav2.0
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./:/var/www/html
     networks:
-      - followup_service_network
+      - followup_service_network4
     command: sh -c "php-fpm"
 
 networks:
