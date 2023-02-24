@@ -25,5 +25,5 @@ services:
     command: sh -c "php-fpm"
 
 networks:
-  followup_service_network:
+  followup_service_network4:
     external: true
