@@ -7,7 +7,7 @@ services:
     image: nginx:latest
     container_name: followup_service_nginx_Raghav
     ports:
-      - "9000:80"
+      - "5000:80"
     volumes:
       - ./:/var/www/html/
       - ./storage/app:/var/www/html/storage/app
