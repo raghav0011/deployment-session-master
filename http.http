@@ -1,0 +1,17 @@
+GET http://localhost:9000/
+
+###
+POST http://localhost:9000/followup/store/worldlink
+Content-Type: application/json
+
+{
+"remarks":"Test remarks",
+"schedule_date":"",
+"followup_by":"pramod.katuwal",
+"source":"eBill",
+"reference":"",
+"reference_value":"",
+"medium":"call-center",
+"short_problem":"Selected Issue",
+"client_username":"pramodk_home"
+}

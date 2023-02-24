@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    image: nginx:latest
+    container_name: followup_service_nginx
+    ports:
+      - "9000:80"
+    volumes:
+      - ./:/var/www/html/
+      - ./storage/app:/var/www/html/storage/app
+    networks:
+      - followup_service_network
+  php:
+    container_name: followup_service
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www/html  
+    networks:
+      - followup_service_network  
+    command: sh -c "php-fpm"
+
+networks:
+  followup_service_network:
+    external: true
