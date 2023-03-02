@@ -3,3 +3,7 @@
     -  pre-build
     -  build
     -  deploy
+  babal_preparation:
+      stage:  pre-build
+      script:
+        -echo "hello-world";
